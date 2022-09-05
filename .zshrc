@@ -178,17 +178,25 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 ## Docker
 
 # List all containers
-alias dpa="sudo docker ps -a"
+alias dlist="sudo docker ps -a"
 
 # List running containers
-alias dp="sudo docker ps"
+alias dlistr="sudo docker ps"
 
 # Start container
-alias ds="sudo docker start"
+alias dstart="sudo docker start"
 
 # Stop container
-alias dst="sudo docker stop"
+alias dstop="sudo docker stop"
 
+# Stop all containers
+alias dkill="docker stop $(docker ps --quiet)"
+
+# Delete all containers
+alias ddrop="docker rm $(docker ps -a --quiet)"
+
+# Compose up in quiet mode
+alias dup="docker-compose up -d"
 
 ## Git
 
@@ -207,7 +215,7 @@ alias gps="git push -u origin"
 ## FS
 
 # Enter dev directory in home
-alias dev="cd /home/${USER}/devW"
+alias dev="cd /home/${USER}/dev"
 
 ## SO
 
